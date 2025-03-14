@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Virtual Play Zone</title>
+    <style> 
+        nav {background-color: rgb(114, 151, 206); color: black;
+        padding: 20px;}
+        h1{
+            font-size: 50px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .category-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap:20px;
+            padding:0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .category-item {
+            text-align: center;
+            width: 200px;
+            list-style: none;
+            
+        }
+
+        .category-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .category-item a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            padding: 5px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .category-item a:hover {
+            background-color: blue;
+            color: white;
+        }
+        
+
+
+    </style>
+</head>
+
+
+<body>
+
+    <h1>VIRTUAL PLAY ZONE<h1>
+    
+    <h1>Categorias<h1>
+        <nav>
+            <ul class="category-list">
+                <li class="category-item">
+                <a href="Accion.html">Accion</a>
+                <img src="Accion.png" alt="Accion" width=200px alt=200px> 
+            </li>
+
+            <li class="category-item">
+                <a href="Carreras.html">Carreras</a>
+                <img src="Carreras.png" alt="Carreras">
+            </li>
+            <li class="category-item">
+                <a href="FreeToPlay.html">Free to Play</a>
+                <img src="FreeToPlay.png" alt="Free to Play">
+            </li>
+            <li class="category-item">
+                <a href="MundoAbierto.html">Mundo Abierto</a>
+                <img src="MundoAbiertoFot.png" alt="Mundo Abierto">
+            </li>
+            <li class="category-item">
+                <a href="Supervivencia.html">Supervivencia</a>
+                <img src="SupervivenciaFoto.png" alt="Supervivencia">
+            </li>
+            <li class="category-item">
+                <a href="Terror.html">Terror</a>
+                <img src="TerrorFoto.png" alt="Terror">
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>
