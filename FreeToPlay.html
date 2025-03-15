@@ -1,21 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Virtual Play Zone</title>
+    <title>FreeToPlay</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 10px;
+        }
+        
+        nav {
+            background-color: rgb(114, 151, 206);
+            color: black;
+            padding: 20px;
+            height: 100%m;
+            width: 20%;
+        }
+        
+        h1 {
+            font-size: 40px;
+            background-color: black;
+            color: white;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .category-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1cm;
+            padding: 0;
+            text-decoration: none;
+            align-items: flex-start;
+        }
+        
+        category-item a {
+            text-decoration: none;
+            font-size: 20px;
+            color: black;
+        }
+        
+        .category-item {
+            list-style-type: none;
+        }
+        
+        h2 {
+            font-size: 40px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .category-item a:hover {
+            color: white;
+            margin-bottom: 2cm;
+            background-color: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        
+        .juegos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 10 cm;
+            padding: 20px;
+            align-items: flex-start;
+        }
+        
+        .card {
+            width: 18rem;
+        }
+        
+        .card-body {
+            padding: 15px;
+        }
+        
+        .navegador {
+            background-color: rgb(114, 151, 206);
+            color: black;
+            padding: 20px;
+            width: 20%;
+            margin: 0;
+            position: fixed;
+            left: 0;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+    </style>
+
 </head>
 
 <body>
     <h1>VIRTUAL PLAY ZONE</h1>
+    <h2>CATEGORIAS</h2>
+    <div class="container">
+        <nav class="navegador">
+            <ul class="category-list">
+                <li class="category-item">
+                    <a class="h2" href="Accion.html">Accion</a>
+                </li>
 
-    <nav>
-        <ul>
+                <li class="category-item">
+                    <a class="h2" href="Carreras.html">Carreras</a>
+                </li>
 
-            <li><a href="VirtualPlayZone.html">Free to Play</a></li>
+                <li class="category-item">
+                    <a class="h2" href="FreeToPlay.html">Free to Play</a>
+                </li>
 
-        </ul>
-    </nav>
+                <li class="category-item">
+                    <a class="h2" href="MundoAbierto.html">Mundo Abierto</a>
+                </li>
+
+                <li class="category-item">
+                    <a class="h2" href="Supervivencia.html">Supervivencia</a>
+                </li>
+
+                <li class="category-item">
+                    <a class="h2" href="Terror.html">Terror</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="juegos">
+            <div class="card">
+                <img src="Accion.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Juego 1</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h1>990000</h1>
+                </div>
+            </div>
+        </div>
 </body>
+
 </html>
