@@ -8,62 +8,80 @@
     <title>Virtual Play Zone</title>
     <style>
         nav {
-            background-color: rgb(114, 151, 206);
-            color: black;
+            background: rgba(179, 144, 173, 0.5);
+            color: white;
             padding: 40px;
         }
         
         h1 {
+            background: rgba(179, 144, 173, 0.5);
             font-size: 40px;
-            background-color: rgb(114, 151, 206);
-            color: black;
+            color: white;
             margin-bottom: 30px;
             text-align: center;
+            border: none;
         }
         
         h2 {
             font-size: 40px;
             margin-bottom: 30px;
             text-align: center;
-        }
-        
-        .category-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            padding: 0;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-        }
-        
-        .category-item {
-            text-align: center;
-            width: 200px;
-            height: 500px;
-            list-style: none;
-        }
-        
-        .category-item img {
-            width: 150%;
-            height: 50%;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        
-        .category-item a {
-            color: black;
-            text-decoration: none;
-            display: block;
-            padding: 10px;
-            border-radius: 5px;
-            margin-top: 20px;
-            text-wrap-mode: nowrap;
-            text-align: center;
-        }
-        
-        .category-item a:hover {
             color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        
+        .fondo {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        body {
+            min-height: 100vh;
+            overflow-y: scroll;
+        }
+        
+        .contenido {
+            position: relative;
+            color: white;
+            text-align: center;
+            margin-top: 20%;
+            font-size: 24px;
+            min-height: 100vh;
+        }
+        
+        .custom-card {
+            background-color: rgba(179, 144, 173, 0.5);
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        .custom-card .card-body {
+            background-color: rgba(179, 144, 173, 0.5);
+            color: #fff;
+        }
+        
+        .custom-card .card-title {
+            color: white;
+            text-align: center;
+        }
+        
+        .custom-card .card-img-top {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
@@ -71,44 +89,125 @@
 
 <body>
 
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" style="border-bottom: none; box-shadow: none;">
+        <div class="container-fluid d-flex justify-content-between">
+            <a class="navbar-brand" href="VirtualPlayZone.html">
+                <img src="virtual3.png" width="35px" class="png">
+                <strong>Virtual Play Zone</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="formulario.html">Formulario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Categorias</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Comunidad
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Noticias</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Preguntas frecuentes</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Acerca de Virtual Play Zone</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="Buscar">
+                    <input class="form-control me-2" type="Buscar" placeholder="Buscar" aria-label="Buscar">
+                    <button class="btn rounded-pill px-4" style="background-color: #6a0dad; color: white; border: none;" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <img class="fondo" src="fondo.jpg" alt="Fondo" style="z-index: -1; position: fixed; width: 100%; height: 100%; object-fit: cover;">
+
     <h1>VIRTUAL PLAY ZONE</h1>
 
 
-    <h2>Categorias</h2>
+    <h2><strong>C A T E G O R I A S</strong></h2>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-4 col-sm-6 col-md-4 col-lg-3">
+                <a href="Accion.html" class="text-decoration-none">
+                    <div class="card custom-card">
+                        <img src="Accion.png" class="card-img-top" alt="Imagen de Juego 1">
+                        <div class="card-body">
+                            <h5 class="card-title">ACCION</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-    <nav>
-        <ul class="category-list">
-            <li class="category-item">
-                <a class="h2" href="Accion.html">Accion</a>
-                <img src="Accion.png" alt="Accion">
-            </li>
+            <div class="col-4 col-sm-6 col-md-4 col-lg-3">
+                <a href="Carreras.html" class="text-decoration-none">
+                    <div class="card custom-card">
+                        <img src="Carreras.png" class="card-img-top" alt="Imagen de Juego 2">
+                        <div class="card-body">
+                            <h5 class="card-title">CARRERAS</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-            <li class="category-item">
-                <a class="h2" href="Carreras.html">Carreras</a>
-                <img src="Carreras.png" alt="Carreras">
-            </li>
+            <div class="col-4 col-sm-6 col-md-4 col-lg-3">
+                <a href="FreeToPlay.html" class="text-decoration-none">
+                    <div class="card custom-card">
+                        <img src="FreeToPlay.png" class="card-img-top" alt="Imagen de Juego 3">
+                        <div class="card-body">
+                            <h5 class="card-title">FREE TO PLAY</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
 
-            <li class="category-item">
-                <a class="h2" href="FreeToPlay.html">Free to Play</a>
-                <img src="FreeToPlay.png" alt="FreetoPlay">
-            </li>
+        <div class="row justify-content-center">
+            <div class="col-4 col-sm-6 col-md-4 col-lg-3">
+                <a href="MundoAbierto.html" class="text-decoration-none">
+                    <div class="card custom-card">
+                        <img src="MundoAbiertoFot.png" class="card-img-top" alt="Imagen de Juego 4">
+                        <div class="card-body">
+                            <h5 class="card-title">MUNDO ABIERTO</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-            <li class="category-item">
-                <a class="h2" href="MundoAbierto.html">Mundo Abierto</a>
-                <img src="MundoAbiertoFot.png" alt="MundoAbierto">
-            </li>
+            <div class="col-4 col-sm-6 col-md-4 col-lg-3">
+                <a href="Supervivencia.html" class="text-decoration-none">
+                    <div class="card custom-card">
+                        <img src="SupervivenciaFoto.png" class="card-img-top" alt="Imagen de Juego 5">
+                        <div class="card-body">
+                            <h5 class="card-title">SUPERVIVENCIA</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-            <li class="category-item">
-                <a class="h2" href="Supervivencia.html">Supervivencia</a>
-                <img src="SupervivenciaFoto.png" alt="Supervivencia">
-            </li>
+            <div class="col-4 col-sm-6 col-md-4 col-lg-3">
+                <a href="Terror.html" class="text-decoration-none">
+                    <div class="card custom-card">
+                        <img src="TerrorFoto.png" class="card-img-top" alt="Imagen de Juego 6">
+                        <div class="card-body">
+                            <h5 class="card-title">TERROR</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
 
-            <li class="category-item">
-                <a class="h2" href="Terror.html">Terror</a>
-                <img src="TerrorFoto.png" alt="Terror">
-            </li>
-        </ul>
-    </nav>
 
 </body>
 
