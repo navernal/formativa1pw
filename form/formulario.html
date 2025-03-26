@@ -105,18 +105,22 @@
                 <div class="mb-3">
                     <label for="nombres" class="form-label">Nombres</label>
                     <input type="text" class="form-control" id="nombres" name="nombres" placeholder="Ingrese su nombre" required>
+                    <div id="errorNombres" class="text-black" style="display: none;">Campo obligatorio</div>
                 </div>
                 <div class="mb-3">
                     <label for="apellidoPaterno" class="form-label">Apellido Paterno</label>
                     <input type="text" class="form-control" id="apellidoPaterno" name="apellidoPaterno" placeholder="Ingrese su apellido paterno" required>
+                    <div id="errorApellidoPaterno" class="text-black" style="display: none;">Campo obligatorio</div>
                 </div>
                 <div class="mb-3">
                     <label for="apellidoMaterno" class="form-label">Apellido Materno</label>
                     <input type="text" class="form-control" id="apellidoMaterno" name="apellidoMaterno" placeholder="Ingrese su apellido materno" required>
+                    <div id="errorApellidoMaterno" class="text-black" style="display: none;">Campo obligatorio</div>
                 </div>
                 <div class="mb-3">
                     <label for="usuario" class="form-label">Nombre de Usuario</label>
                     <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Ingrese un usuario" required>
+                    <div id="errorUsuario" class="text-danger" style="display: none;">Debe ingresar nombre de usuario.</div>
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Correo Electrónico</label>
@@ -128,8 +132,8 @@
                 </div>
                 <div class="mb-3">
                     <label for="confirmPassword" class="form-label">Repetir Contraseña</label>
-                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="confirme su contraseña" required>
-                    <div id="errorPass" class="text-danger" style="display: none;">Las contraseñas no coinciden o no cumplen con los requisitos.</div>
+                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirme su contraseña" required>
+                    <div id="errorPass" class="text-black" style="display: none;">Las contraseñas no coinciden o no cumplen con los requisitos.</div>
                 </div>
                 <div class="mb-3">
                     <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
@@ -148,11 +152,59 @@
     <script>
         document.getElementById("registroForm").addEventListener("submit", function(event) {
             event.preventDefault();
+            const nombres = document.getElementById("nombres").value.trim();
+            const apellidoPaterno = document.getElementById("apellidoPaterno").value.trim();
+            const apellidoMaterno = document.getElementById("apellidoMaterno").value.trim();
+            const usuario = document.getElementById("usuario").value.trim();
             const password = document.getElementById("password").value;
             const confirmPassword = document.getElementById("confirmPassword").value;
             const email = document.getElementById("email").value;
             const fechaNacimiento = new Date(document.getElementById("fechaNacimiento").value);
+
             const errorPass = document.getElementById("errorPass");
+            errorPass.style.display = "none";
+            const errorUsuario = document.getElementById("errorUsuario");
+            const errorNombres = document.getElementById("errorNombres");
+            const errorApellidoPaterno = document.getElementById("errorApellidoPaterno");
+            const errorApellidoMaterno = document.getElementById("errorApellidoMaterno");
+            let isValid = true;
+
+            //Validar nombres
+            if (!nombres) {
+                errorNombres.style.display = "block";
+                isValid = false;
+            } else {
+                errorNombres.style.display = "none";
+            }
+            // Validar apellido paterno
+            if (!apellidoPaterno) {
+                errorApellidoPaterno.style.display = "block";
+                isValid = false;
+            } else {
+                errorApellidoPaterno.style.display = "none";
+            }
+
+            // Validar apellido materno
+            if (!apellidoMaterno) {
+                errorApellidoMaterno.style.display = "block";
+                isValid = false;
+            } else {
+                errorApellidoMaterno.style.display = "none";
+            }
+            // validar usuario
+            if (!usuario) {
+                errorUsuario.style.display = "block";
+                isValid = false;
+            } else {
+                errorUsuario.style.display = "none";
+            }
+
+
+            //validar campos vacíos
+            if (!nombres || !apellidoPaterno || !apellidoMaterno || !usuario || !email || !password || !confirmPassword || !document.getElementById("fechaNacimiento").value) {
+                alert("Todos los campos obligatorios deben estar llenos.");
+                return;
+            }
 
             // Validar contraseña (entre 6 y 18 caracteres, 1 mayúscula, 1 número)
             const passwordRegex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,18}$/;
@@ -161,6 +213,12 @@
                 return;
             }
             errorPass.style.display = "none";
+
+            // Validar que las contraseñas coincidan
+            if (password !== confirmPassword) {
+                errorPass.style.display = "block";
+                return;
+            }
 
             // Validar correo
             const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -173,6 +231,7 @@
             const today = new Date();
             const age = today.getFullYear() - fechaNacimiento.getFullYear();
             const monthDiff = today.getMonth() - fechaNacimiento.getMonth();
+            const dayDiff = today.getDate() - fechaNacimiento.getDate();
             if (age < 13 || (age === 13 && monthDiff < 0)) {
                 alert("Debes tener al menos 13 años para registrarte.");
                 return;
@@ -184,19 +243,30 @@
 
         document.getElementById("btnLimpiar").addEventListener("click", function() {
             document.getElementById("registroForm").reset();
+            document.getElementById("errorPass").style.display = "none";
+            document.getElementById("errorUsuario").style.display = "none";
+            document.getElementById("errorNombres").style.display = "none";
+            document.getElementById("errorApellidoPaterno").style.display = "none";
+            document.getElementById("errorApellidoMaterno").style.display = "none";
         });
     </script>
-
 
 
 </body>
 <div id="footer-container"></div>
 <script>
-    fetch('footer.html')
-        .then(response => response.text())
+    fetch('../footer.html')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al cargar el footer');
+            }
+            return response.text();
+        })
         .then(html => {
             document.getElementById('footer-container').innerHTML = html;
-        });
+        })
+        .catch(error => console.error('Error:', error));
 </script>
+
 
 </html>
