@@ -124,11 +124,21 @@
                         <a class="nav-link disabled" aria-disabled="true">Acerca de Virtual Play Zone</a>
                     </li>
                 </ul>
-                <a href="login.html" class="btn rounded-pill px-4"
+                <button class="btn btn-primary me-2" onclick="agregarAlCarrito('Juego 1', 5000)">Agregar al Carrito</button>
+                <script>
+                    function agregarAlCarrito(nombre, precio) {
+                        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+                        carrito.push({ nombre, precio });
+                        localStorage.setItem("carrito", JSON.stringify(carrito));
+                
+                        alert(nombre + " agregado al carrito.");
+                        window.location.href = "../carrito.html"; // Redirige a carrito.html
+                }
+                </script>
+                <a href="../login.html" class="btn rounded-pill px-4"
                     style="background-color: #a069c886; color: white; border: none; margin-right: 60px;">
                     Iniciar sesión
                 </a>
-
                 <form class="d-flex" role="Buscar">
                     <input class="form-control me-2" type="Buscar" placeholder="Buscar" aria-label="Buscar">
                     <button class="btn rounded-pill px-4" style="background-color: #6a0dad; color: white; border: none;"
