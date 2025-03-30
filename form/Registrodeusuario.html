@@ -75,17 +75,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Categorias</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Comunidad
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Noticias</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Preguntas frecuentes</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../foro.html">Foro</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" aria-disabled="true">Acerca de Virtual Play Zone</a>
@@ -104,40 +95,40 @@
         <div class="form-container">
             <form id="registroForm">
                 <div class="mb-3">
-                    <label for="nombres" class="form-label">Nombres</label>
+                    <label for="nombres" class="form-label">Nombres *</label>
                     <input type="text" class="form-control" id="nombres" name="nombres" placeholder="Ingrese su nombre" required>
                     <div id="errorNombres" class="text-black" style="display: none;">Campo obligatorio</div>
                 </div>
                 <div class="mb-3">
-                    <label for="apellidoPaterno" class="form-label">Apellido Paterno</label>
+                    <label for="apellidoPaterno" class="form-label">Apellido Paterno *</label>
                     <input type="text" class="form-control" id="apellidoPaterno" name="apellidoPaterno" placeholder="Ingrese su apellido paterno" required>
                     <div id="errorApellidoPaterno" class="text-black" style="display: none;">Campo obligatorio</div>
                 </div>
                 <div class="mb-3">
-                    <label for="apellidoMaterno" class="form-label">Apellido Materno</label>
+                    <label for="apellidoMaterno" class="form-label">Apellido Materno *</label>
                     <input type="text" class="form-control" id="apellidoMaterno" name="apellidoMaterno" placeholder="Ingrese su apellido materno" required>
                     <div id="errorApellidoMaterno" class="text-black" style="display: none;">Campo obligatorio</div>
                 </div>
                 <div class="mb-3">
-                    <label for="usuario" class="form-label">Nombre de Usuario</label>
+                    <label for="usuario" class="form-label">Nombre de Usuario *</label>
                     <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Ingrese un usuario" required>
                     <div id="errorUsuario" class="text-danger" style="display: none;">Debe ingresar nombre de usuario.</div>
                 </div>
                 <div class="mb-3">
-                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <label for="email" class="form-label">Correo Electrónico *</label>
                     <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su correo" required>
                 </div>
                 <div class="mb-3">
-                    <label for="password" class="form-label">Contraseña</label>
+                    <label for="password" class="form-label">Contraseña *</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="Debe contener al menos 1 numero y una mayuscula" required>
                 </div>
                 <div class="mb-3">
-                    <label for="confirmPassword" class="form-label">Repetir Contraseña</label>
+                    <label for="confirmPassword" class="form-label">Repetir Contraseña *</label>
                     <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirme su contraseña" required>
                     <div id="errorPass" class="text-black" style="display: none;">Las contraseñas no coinciden o no cumplen con los requisitos.</div>
                 </div>
                 <div class="mb-3">
-                    <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                    <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento *</label>
                     <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" placeholder="Ingrese su fecha de nacimiento" required>
                 </div>
                 <div class="mb-3">

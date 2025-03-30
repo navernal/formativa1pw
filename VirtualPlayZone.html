@@ -15,7 +15,7 @@
             color: white;
             padding: 40px;
         }
-        
+
         h1 {
             background: rgba(179, 144, 173, 0.5);
             font-size: 40px;
@@ -24,7 +24,7 @@
             text-align: center;
             border: none;
         }
-        
+
         h2 {
             font-size: 40px;
             margin-bottom: 30px;
@@ -32,13 +32,13 @@
             color: white;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
-        
+
         html {
             margin: 0;
             padding: 0;
             height: 100%;
         }
-        
+
         .fondo {
             position: fixed;
             width: 100%;
@@ -46,12 +46,12 @@
             object-fit: cover;
             z-index: -1;
         }
-        
+
         body {
             min-height: 100vh;
             overflow-y: scroll;
         }
-        
+
         .contenido {
             position: relative;
             color: white;
@@ -60,24 +60,24 @@
             font-size: 24px;
             min-height: 100vh;
         }
-        
+
         .custom-card {
             background-color: rgba(179, 144, 173, 0.5);
             border: none;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
         }
-        
+
         .custom-card .card-body {
             background-color: rgba(179, 144, 173, 0.5);
             color: #fff;
         }
-        
+
         .custom-card .card-title {
             color: white;
             text-align: center;
         }
-        
+
         .custom-card .card-img-top {
             width: 100%;
             height: 200px;
@@ -86,11 +86,8 @@
             margin-left: auto;
             margin-right: auto;
         }
-
     </style>
 </head>
-
-
 <body>
 
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" style="border-bottom: none; box-shadow: none;">
@@ -99,49 +96,51 @@
                 <img src="img\virtual3.png" width="35px" class="png">
                 <strong>Virtual Play Zone</strong>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="form\Registrodeusuario.html">Registro de usuario</a>
+                        <a class="nav-link active" aria-current="page" href="form\Registrodeusuario.html">Registro de
+                            usuario</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Categorias</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Comunidad
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Noticias</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Preguntas frecuentes</a></li>
-                        </ul>
+                        <a class="nav-link" href="foro.html">Foro</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" aria-disabled="true">Acerca de Virtual Play Zone</a>
                     </li>
                 </ul>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Juego 1', 5000)">Agregar al Carrito</button>
+                <script>
+                    function agregarAlCarrito(nombre, precio) {
+                        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+                        carrito.push({ nombre, precio });
+                        localStorage.setItem("carrito", JSON.stringify(carrito));
+                
+                        alert(nombre + " agregado al carrito.");
+                        window.location.href = "carrito.html"; // Redirige a carrito.html
+                }
+                </script>
                 <div>
-                    <form class="d-flex" role="Iniciar sesion">
-                    <button class="btn rounded-pill px-4" style="background-color: #a069c886; color: white; border: none; margin-right: 60px ;" type="submit">Iniciar sesion</button>
-
-                    </form>
+                    <a href="login.html" class="btn rounded-pill px-4"
+                        style="background-color: #a069c886; color: white; border: none; margin-right: 60px;">
+                        Iniciar sesión
+                    </a>
                 </div>
-
                 <form class="d-flex" role="Buscar">
                     <input class="form-control me-2" type="Buscar" placeholder="Buscar" aria-label="Buscar">
-                    <button class="btn rounded-pill px-4" style="background-color: #6a0dad; color: white; border: none;" type="submit">Buscar</button>
+                    <button class="btn rounded-pill px-4" style="background-color: #6a0dad; color: white; border: none;"
+                        type="submit">Buscar</button>
                 </form>
             </div>
         </div>
     </nav>
-
-    <img class="fondo" src="img\fondo.jpg" alt="Fondo" style="z-index: -1; position: fixed; width: 100%; height: 100%; object-fit: cover;">
+    <img class="fondo" src="img\fondo.jpg" alt="Fondo"
+        style="z-index: -1; position: fixed; width: 100%; height: 100%; object-fit: cover;">
 
     <h1>VIRTUAL PLAY ZONE</h1>
 
@@ -235,5 +234,4 @@
         })
         .catch(error => console.error('Error:', error));
 </script>
-
 </html>
