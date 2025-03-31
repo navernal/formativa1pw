@@ -12,20 +12,20 @@
         body {
             margin-top: 1cm;
         }
-        
+
         header {
             width: 100%;
             height: 5cm;
             position: relative;
             overflow: hidden;
         }
-        
+
         header img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
+
         .texto-overlay {
             position: absolute;
             top: 50%;
@@ -34,13 +34,13 @@
             color: white;
             text-align: center;
         }
-        
+
         h1 {
             font-size: 3em;
             margin: 0;
             margin-bottom: 15px;
         }
-        
+
         p {
             font-size: 1.0em;
             margin: 0;
@@ -48,14 +48,14 @@
             background-color: rgba(179, 144, 173, 0.5);
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
-        
+
         .custom-card {
             background-color: rgba(179, 144, 173, 0.5);
             border: none;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
         }
-        
+
         .custom-card .card-body {
             background-color: rgba(179, 144, 173, 0.5);
             color: black;
@@ -65,14 +65,14 @@
             flex-direction: column;
             justify-content: space-between;
         }
-        
+
         .custom-card .card-title {
             color: black;
             text-align: center;
             margin-bottom: 10px;
             /
         }
-        
+
         .custom-card .card-img-top {
             width: 100%;
             height: 200px;
@@ -81,7 +81,7 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         .black-background {
             background-color: rgba(179, 144, 173, 0.5);
             color: white;
@@ -96,7 +96,8 @@
         <img src="..\img\fondo.jpg" alt="Imagen en la parte superior">
         <div class="texto-overlay">
             <h1><strong>A C C I O N</strong></h1>
-            <p><strong> Los jugadores deben realizar acciones rápidas y tomar decisiones en tiempo real, generalmente involucrando combate o desafíos físicos intensos</strong></p>
+            <p><strong> Los jugadores deben realizar acciones rápidas y tomar decisiones en tiempo real, generalmente
+                    involucrando combate o desafíos físicos intensos</strong></p>
         </div>
     </header>
 
@@ -106,7 +107,9 @@
                 <img src="..\img\virtual3.png" width="35px" class="png">
                 <strong>Virtual Play Zone</strong>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -115,24 +118,24 @@
                         <a class="nav-link" href="#">Categorias</a>
                     </li>
                     <li class="nav-item">
-                        <li class="nav-item">
-                            <a class="nav-link" href="../foro.html">Foro</a>
-                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../foro.html">Foro</a>
+                    </li>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" aria-disabled="true">Acerca de Virtual Play Zone</a>
                     </li>
                 </ul>
-                <button class="btn btn-primary me-2" onclick="agregarAlCarrito('Juego 1', 5000)">Agregar al Carrito</button>
+                <a href="../carrito.html" class="btn btn-primary me-2">Ir al Carrito</a>
                 <script>
                     function agregarAlCarrito(nombre, precio) {
                         let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
                         carrito.push({ nombre, precio });
                         localStorage.setItem("carrito", JSON.stringify(carrito));
-                
+
                         alert(nombre + " agregado al carrito.");
                         window.location.href = "../carrito.html"; // Redirige a carrito.html
-                }
+                    }
                 </script>
                 <a href="../login.html" class="btn rounded-pill px-4"
                     style="background-color: #a069c886; color: white; border: none; margin-right: 60px;">
@@ -140,7 +143,8 @@
                 </a>
                 <form class="d-flex" role="Buscar">
                     <input class="form-control me-2" type="Buscar" placeholder="Buscar" aria-label="Buscar">
-                    <button class="btn rounded-pill px-4" style="background-color: #6a0dad; color: white; border: none;" type="submit">Buscar</button>
+                    <button class="btn rounded-pill px-4" style="background-color: #6a0dad; color: white; border: none;"
+                        type="submit">Buscar</button>
                 </form>
             </div>
         </div>
@@ -152,23 +156,50 @@
                 <div class="card custom-card">
                     <img src="..\img\doom.png" class="card-img-top" alt="Imagen de Juego 1">
                     <div class="card-body">
-                        <h5 class="card-title">DOOM Eternal </h5>
-                        <p>Eres el Doom Slayer y debes aniquilar hordas de demonios con un arsenal brutal en este shooter frenético y vertiginoso</p>
-                        <a href="#" class="btn btn-dark text-white">$35.000 CLP</a>
+                        <h5 class="card-title">DOOM Eternal</h5>
+                        <p>Eres el Doom Slayer y debes aniquilar hordas de demonios con un arsenal brutal en este
+                            shooter frenético y vertiginoso</p>
+                        <button class="btn btn-dark text-white agregar-carrito" data-nombre="DOOM Eternal"
+                            data-precio="$35.000 CLP">$35.000</button>
                     </div>
                 </div>
             </div>
-
             <div class="col-4">
                 <div class="card custom-card">
                     <img src="..\img\devil.png" class="card-img-top" alt="Imagen de Juego 2">
                     <div class="card-body">
                         <h5 class="card-title">Devil May Cry 5</h5>
-                        <p> Lucha contra demonios con un combate estilizado y tres personajes jugables con habilidades únicas</p>
-                        <a href="#" class="btn btn-dark text-white">$30.000 CLP</a>
+                        <p>Lucha contra demonios con un combate estilizado y tres personajes jugables con habilidades
+                            únicas</p>
+                        <button class="btn btn-dark text-white agregar-carrito" data-nombre="Devil May Cry 5"
+                            data-precio="$30.000 CLP">$30.000</button>
                     </div>
                 </div>
             </div>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const botones = document.querySelectorAll(".agregar-carrito");
+
+                    botones.forEach(boton => {
+                        boton.addEventListener("click", function () {
+                            let nombre = this.getAttribute("data-nombre");
+                            let precioTexto = this.getAttribute("data-precio");
+
+                            // Convertir el precio a número eliminando símbolos y puntos
+                            let precio = parseInt(precioTexto.replace(/\D/g, ''));
+
+                            let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+                            carrito.push({ nombre, precio });
+
+                            localStorage.setItem("carrito", JSON.stringify(carrito));
+
+                            alert(`${nombre} agregado al carrito.`);
+                        });
+                    });
+                });
+            </script>
+
 
         </div>
     </div>

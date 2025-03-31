@@ -124,7 +124,7 @@
                         <a class="nav-link disabled" aria-disabled="true">Acerca de Virtual Play Zone</a>
                     </li>
                 </ul>
-                <button class="btn btn-primary me-2" onclick="agregarAlCarrito('Juego 1', 5000)">Agregar al Carrito</button>
+                <a href="../carrito.html" class="btn btn-primary me-2">Ir al Carrito</a>
                 <script>
                     function agregarAlCarrito(nombre, precio) {
                         let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
