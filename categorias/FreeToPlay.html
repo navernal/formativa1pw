@@ -5,26 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <title>Accion</title>
     <style>
         body {
             margin-top: 1cm;
         }
-        
+
         header {
             width: 100%;
             height: 5cm;
             position: relative;
             overflow: hidden;
         }
-        
+
         header img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
+
         .texto-overlay {
             position: absolute;
             top: 50%;
@@ -33,13 +34,13 @@
             color: white;
             text-align: center;
         }
-        
+
         h1 {
             font-size: 3em;
             margin: 0;
             margin-bottom: 15px;
         }
-        
+
         p {
             font-size: 1.0em;
             margin: 0;
@@ -47,14 +48,14 @@
             background-color: rgba(179, 144, 173, 0.5);
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
-        
+
         .custom-card {
             background-color: rgba(179, 144, 173, 0.5);
             border: none;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
         }
-        
+
         .custom-card .card-body {
             background-color: rgba(179, 144, 173, 0.5);
             color: black;
@@ -64,14 +65,14 @@
             flex-direction: column;
             justify-content: space-between;
         }
-        
+
         .custom-card .card-title {
             color: black;
             text-align: center;
             margin-bottom: 10px;
             /
         }
-        
+
         .custom-card .card-img-top {
             width: 100%;
             height: 200px;
@@ -80,7 +81,7 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         .black-background {
             background-color: rgba(179, 144, 173, 0.5);
             color: white;
@@ -94,8 +95,10 @@
     <header>
         <img src="..\img\fondo.jpg" alt="Imagen en la parte superior">
         <div class="texto-overlay">
-            <h1><strong><span class="word1">F R E E </span>  <span class="word2"> T O </span><span class="word3"> P L A Y</span></strong></h1>
-            <p><strong>Juegos gratuitos que permiten a los jugadores acceder al contenido básico sin costo, pero con opciones para compras dentro del juego</strong></p>
+            <h1><strong><span class="word1">F R E E </span> <span class="word2"> T O </span><span class="word3"> P L A
+                        Y</span></strong></h1>
+            <p><strong>Juegos gratuitos que permiten a los jugadores acceder al contenido básico sin costo, pero con
+                    opciones para compras dentro del juego</strong></p>
         </div>
     </header>
 
@@ -105,36 +108,42 @@
                 <img src="..\img\virtual3.png" width="35px" class="png">
                 <strong>Virtual Play Zone</strong>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Tienda</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#">Categorias</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Comunidad
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Noticias</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Preguntas frecuentes</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../foro.html">Foro</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" aria-disabled="true">Acerca de Virtual Play Zone</a>
                     </li>
                 </ul>
+                <a href="../carrito.html" class="btn btn-primary me-2">Ir al Carrito</a>
+                <script>
+                    function agregarAlCarrito(nombre, precio) {
+                        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+                        carrito.push({ nombre, precio });
+                        localStorage.setItem("carrito", JSON.stringify(carrito));
+
+                        alert(nombre + " agregado al carrito.");
+                        window.location.href = "../carrito.html"; // Redirige a carrito.html
+                    }
+                </script>
+                <a href="../login.html" class="btn rounded-pill px-4"
+                    style="background-color: #a069c886; color: white; border: none; margin-right: 60px;">
+                    Iniciar sesión
+                </a>
                 <form class="d-flex" role="Buscar">
                     <input class="form-control me-2" type="Buscar" placeholder="Buscar" aria-label="Buscar">
-                    <button class="btn rounded-pill px-4" style="background-color: #6a0dad; color: white; border: none;" type="submit">Buscar</button>
+                    <button class="btn rounded-pill px-4" style="background-color: #6a0dad; color: white; border: none;"
+                        type="submit">Buscar</button>
                 </form>
             </div>
         </div>
@@ -148,7 +157,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Battlefield 2042</h5>
                         <p> Shooter multijugador a gran escala con combates en mapas dinámicos y un arsenal moderno</p>
-                        <a href="#" class="btn btn-dark text-white">$0 CLP</a>
+                        <button class="btn btn-dark text-white agregar-carrito" data-nombre="Battlefield 2042"
+                            data-precio="$0 CLP">$0</button>
                     </div>
                 </div>
             </div>
@@ -158,23 +168,53 @@
                     <img src="..\img\destiny.png" class="card-img-top" alt="Imagen de Juego 2">
                     <div class="card-body">
                         <h5 class="card-title">Destiny 2: The Witch Queen</h5>
-                        <p>Expansión de este FPS/RPG en línea donde enfrentas a Savathûn y exploras un nuevo mundo lleno de secretos</p>
-                        <a href="#" class="btn btn-dark text-white">$0 CLP</a>
+                        <p>Expansión de este FPS/RPG en línea donde enfrentas a Savathûn y exploras un nuevo mundo lleno
+                            de secretos</p>
+                        <button class="btn btn-dark text-white agregar-carrito" data-nombre="Destiny 2: The Witch Queen"
+                            data-precio="$0 CLP">$0</button>
                     </div>
                 </div>
+
             </div>
 
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const botones = document.querySelectorAll(".agregar-carrito");
+
+                    botones.forEach(boton => {
+                        boton.addEventListener("click", function () {
+                            let nombre = this.getAttribute("data-nombre");
+                            let precioTexto = this.getAttribute("data-precio");
+
+                            // Convertir el precio a número eliminando símbolos y puntos
+                            let precio = parseInt(precioTexto.replace(/\D/g, ''));
+
+                            let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+                            carrito.push({ nombre, precio });
+
+                            localStorage.setItem("carrito", JSON.stringify(carrito));
+
+                            alert(`${nombre} agregado al carrito.`);
+                        });
+                    });
+                });
+            </script>
         </div>
-    </div>
 
 </body>
 <div id="footer-container"></div>
 <script>
-    fetch('footer.html')
-        .then(response => response.text())
+    fetch('../footer.html')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al cargar el footer');
+            }
+            return response.text();
+        })
         .then(html => {
             document.getElementById('footer-container').innerHTML = html;
-        });
+        })
+        .catch(error => console.error('Error:', error));
 </script>
 
 </html>
