@@ -245,19 +245,13 @@
 
 
 </body>
-<div id="footer-container"></div>
-<script>
-    fetch('../footer.html')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Error al cargar el footer');
-            }
-            return response.text();
-        })
-        .then(html => {
-            document.getElementById('footer-container').innerHTML = html;
-        })
-        .catch(error => console.error('Error:', error));
-</script>
+<footer class="bg-dark text-white text-center py-4">
+    <p>&copy; 2025 Virtual Play Zone - Todos los derechos reservados.</p>
+    <div class="d-flex justify-content-center gap-3">
+        <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+    </div>
+</footer>
 
 </html>

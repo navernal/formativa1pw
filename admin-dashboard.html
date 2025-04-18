@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,40 +13,41 @@
             background-color: #f4f4f9;
             color: #333;
         }
-
+        
         .navbar {
             background-color: #6a0dad;
         }
-
+        
         .navbar-brand {
             color: white;
             font-weight: bold;
         }
-
+        
         .navbar-nav .nav-link {
             color: white;
         }
-
+        
         .container {
             margin-top: 100px;
         }
-
+        
         .card {
             margin-top: 20px;
         }
-
+        
         .btn-logout {
             background-color: red;
             color: white;
             border: none;
             width: 100%;
         }
-
+        
         .btn-logout:hover {
             background-color: darkred;
         }
     </style>
 </head>
+
 <body>
 
     <!-- Menú de Navegación -->
@@ -131,18 +133,13 @@
     </script>
 
 </body>
-<div id="footer-container"></div>
-<script>
-    fetch('../footer.html')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Error al cargar el footer');
-            }
-            return response.text();
-        })
-        .then(html => {
-            document.getElementById('footer-container').innerHTML = html;
-        })
-        .catch(error => console.error('Error:', error));
-</script>
+<footer class="bg-dark text-white text-center py-4">
+    <p>&copy; 2025 Virtual Play Zone - Todos los derechos reservados.</p>
+    <div class="d-flex justify-content-center gap-3">
+        <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+    </div>
+</footer>
+
 </html>

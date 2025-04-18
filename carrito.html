@@ -15,7 +15,7 @@
             background-position: center;
             color: white;
         }
-
+        
         .carrito-container {
             max-width: 600px;
             background: rgba(0, 0, 0, 0.8);
@@ -24,12 +24,12 @@
             margin: 100px auto;
             text-align: center;
         }
-
+        
         .btn-primary {
             background-color: #6a0dad;
             border: none;
         }
-
+        
         .btn-primary:hover {
             background-color: #570b9a;
         }
@@ -42,7 +42,7 @@
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="VirtualPlayZone.html">
-                <img src="../img/virtual3.png" width="35px" class="png">
+                <img src="img/virtual3.png" width="35px" class="png">
                 <strong>Virtual Play Zone</strong>
             </a>
         </div>
@@ -106,22 +106,16 @@
         }
 
         actualizarCarrito();
-
     </script>
 
 </body>
-<div id="footer-container"></div>
-<script>
-    fetch('../footer.html')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Error al cargar el footer');
-            }
-            return response.text();
-        })
-        .then(html => {
-            document.getElementById('footer-container').innerHTML = html;
-        })
-        .catch(error => console.error('Error:', error));
-</script>
+<footer class="bg-dark text-white text-center py-4">
+    <p>&copy; 2025 Virtual Play Zone - Todos los derechos reservados.</p>
+    <div class="d-flex justify-content-center gap-3">
+        <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+    </div>
+</footer>
+
 </html>

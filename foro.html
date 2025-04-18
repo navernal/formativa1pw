@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foro - Virtual Play Zone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <style>
@@ -13,13 +15,20 @@
             background-position: center;
             color: white;
         }
+        
         .foro-container {
             max-width: 800px;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(179, 144, 173, 0.5) !important;
             padding: 20px;
             border-radius: 10px;
             margin: 80px auto;
+            text-align: left;
         }
+        
+        .list-group-item {
+            text-align: left !important;
+        }
+        
         .btn-back {
             position: fixed;
             bottom: 20px;
@@ -28,14 +37,26 @@
             color: white;
             border: none;
         }
+        
+        .btn-back:hover,
+        .btn-back:focus {
+            background-color: #6a0dad;
+            color: white;
+        }
+        
+        .btn-primary {
+            background-color: #6a0dad;
+            color: white;
+        }
     </style>
 </head>
+
 <body>
     <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../VirtualPlayZone.html">
-                <img src="../img/virtual3.png" width="35px"> <strong>Virtual Play Zone</strong>
+            <a class="navbar-brand" href="../index.html">
+                <img src="img\VIRTUAL3.png" width="35px" class="png"> <strong>Virtual Play Zone</strong>
             </a>
         </div>
     </nav>
@@ -55,16 +76,24 @@
     </div>
 
     <!-- Botón de regreso -->
-    <button class="btn btn-back" onclick="window.location.href='../VirtualPlayZone.html'">Regresar</button>
-   
+    <button class="btn btn-back" onclick="window.location.href='index.html'">Regresar</button>
+
 
     <!-- Footer -->
     <div id="footer-container"></div>
     <script>
-        fetch('../footer.html')
-            .then(response => response.text())
+        fetch('footer.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("No se pudo cargar el footer.");
+                }
+                return response.text();
+            })
             .then(html => {
                 document.getElementById('footer-container').innerHTML = html;
+            })
+            .catch(error => {
+                console.error("Error cargando footer:", error);
             });
 
         function agregarPregunta() {
@@ -79,4 +108,5 @@
         }
     </script>
 </body>
+
 </html>

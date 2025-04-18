@@ -125,15 +125,17 @@
                 <script>
                     function agregarAlCarrito(nombre, precio) {
                         let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-                        carrito.push({ nombre, precio });
+                        carrito.push({
+                            nombre,
+                            precio
+                        });
                         localStorage.setItem("carrito", JSON.stringify(carrito));
-                
+
                         alert(nombre + " agregado al carrito.");
                         window.location.href = "../carrito.html"; // Redirige a carrito.html
-                }
+                    }
                 </script>
-                <a href="../login.html" class="btn rounded-pill px-4"
-                    style="background-color: #a069c886; color: white; border: none; margin-right: 60px;">
+                <a href="../login.html" class="btn rounded-pill px-4" style="background-color: #a069c886; color: white; border: none; margin-right: 60px;">
                     Iniciar sesión
                 </a>
                 <form class="d-flex" role="Buscar">
@@ -171,19 +173,13 @@
     </div>
 
 </body>
-<div id="footer-container"></div>
-<script>
-    fetch('../footer.html')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Error al cargar el footer');
-            }
-            return response.text();
-        })
-        .then(html => {
-            document.getElementById('footer-container').innerHTML = html;
-        })
-        .catch(error => console.error('Error:', error));
-</script>
+<footer class="bg-dark text-white text-center py-4">
+    <p>&copy; 2025 Virtual Play Zone - Todos los derechos reservados.</p>
+    <div class="d-flex justify-content-center gap-3">
+        <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+    </div>
+</footer>
 
 </html>
